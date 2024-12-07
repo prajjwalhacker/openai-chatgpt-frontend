@@ -20,6 +20,8 @@ body {
 }
 
 #send-container {
+    display: flex;
+    align-items: center;
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -34,4 +36,24 @@ body {
     flex-direction: row;
     gap: 10px;
   }
+
+  #input-box {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    resize: none; /* Prevent resizing */
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    border-radius: 8px; /* Rounded corners */
+    line-height: 1.5;
+  }
   
+
+  #send-button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
