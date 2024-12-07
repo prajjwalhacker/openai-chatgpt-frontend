@@ -9,6 +9,7 @@ const botSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
+let intervalId;
 
 async function apiForAnswer(prompt, node) {
    
@@ -23,6 +24,7 @@ async function apiForAnswer(prompt, node) {
        const res = await response.json();
 
        node.nodeValue = res.bot;
+       clearInterval(intervalId);
    }
    catch (err) {
       console.log("err");
@@ -40,7 +42,7 @@ const generateRandomId = () => {
     return id;
  }
 
-let intervalId;
+
 const loader = (node) => {
    let loadingText = '';
    intervalId = setInterval(() => {
