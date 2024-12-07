@@ -58,6 +58,9 @@ body {
       width: 25px;
       height: 25px;
     }
+    .headline-container {
+      width: 250px;
+    }
   }
   .bot-chat {
     display: flex;
