@@ -14,7 +14,7 @@ let intervalId;
 async function apiForAnswer(prompt, node) {
    
    try {
-      const response = await fetch(process.env.HOST_URL, {
+      const response = await fetch('https://openai-chatgpt-backend.onrender.com', {
          method: 'POST', // HTTP method
          headers: {
            'Content-Type': 'application/json', // Sending JSON data
