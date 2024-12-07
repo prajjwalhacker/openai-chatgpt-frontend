@@ -49,6 +49,12 @@ body {
     color: #fff;
   }
 
+  @media (max-width: 400px) {
+    .user-chat {
+      width: 250px; /* Make the width 100% */
+      padding: 10px; /* Adjust padding if needed */
+    }
+  }
   .bot-chat {
     display: flex;
     flex-direction: column;
