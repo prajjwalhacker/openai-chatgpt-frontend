@@ -50,6 +50,10 @@ body {
     border-radius: 8px; /* Rounded corners */
     line-height: 1.5;
   }
+
+  #input-box::-webkit-scrollbar {
+    display: none;
+  }
   
 
   #send-button {
