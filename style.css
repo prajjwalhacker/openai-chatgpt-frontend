@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
 #send-container {
@@ -35,6 +36,19 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px;
+  }
+
+.user-chat {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: 400px;
+    left: 50%;
+    padding: 10px;
+    background: #40414F;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
   }
 
   #input-box {
