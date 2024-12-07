@@ -24,6 +24,19 @@ const generateRandomId = () => {
     return id;
  }
 
+let intervalId;
+const loader = (node) => {
+   let loadingText = '';
+   intervalId = setInterval(() => {
+      if (node.nodeValue.length === 4) {
+         node.nodeValue = '.';
+      }
+      else {
+        node.nodeValue += '.';
+      }
+   }, 500);
+}
+
 function appendUserMessage(id, message) {
     const userDiv = document.createElement('div');
     userDiv.classList.add('user-chat');
@@ -47,6 +60,7 @@ function appendUserMessage(id, message) {
     botDiv.appendChild(textNodeBot);
     chatContainer.appendChild(botDiv);
     chatContainer.scrollTop = chatContainer.scrollHeight;
+    loader(textNodeBot);
 }
 
 const buttonContaier = document.getElementById('send-button');
