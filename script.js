@@ -14,7 +14,7 @@ let intervalId;
 async function apiForAnswer(prompt, node) {
    
    try {
-      const response = await fetch('http://localhost:8000', {
+      const response = await fetch(process.env.HOST_URL, {
          method: 'POST', // HTTP method
          headers: {
            'Content-Type': 'application/json', // Sending JSON data
