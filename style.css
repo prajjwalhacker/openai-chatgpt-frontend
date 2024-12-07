@@ -54,6 +54,10 @@ body {
       width: 250px; /* Make the width 100% */
       padding: 10px; /* Adjust padding if needed */
     }
+    #send-button{
+      width: 25px;
+      height: 25px;
+    }
   }
   .bot-chat {
     display: flex;
