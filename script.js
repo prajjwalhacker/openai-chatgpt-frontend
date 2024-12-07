@@ -10,8 +10,24 @@ const botSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
-function apiForAnswer() {
+async function apiForAnswer(prompt, node) {
    
+   try {
+      const response = await fetch('http://localhost:8000', {
+         method: 'POST', // HTTP method
+         headers: {
+           'Content-Type': 'application/json', // Sending JSON data
+         },
+         body: JSON.stringify({ prompt })
+       })
+       const res = await response.json();
+
+       node.nodeValue = res.bot;
+   }
+   catch (err) {
+      console.log("err");
+      console.log(err);
+   }
 }
 
 
@@ -61,6 +77,7 @@ function appendUserMessage(id, message) {
     chatContainer.appendChild(botDiv);
     chatContainer.scrollTop = chatContainer.scrollHeight;
     loader(textNodeBot);
+    apiForAnswer(message, textNodeBot);
 }
 
 const buttonContaier = document.getElementById('send-button');
