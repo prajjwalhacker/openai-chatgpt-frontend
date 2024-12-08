@@ -49,6 +49,13 @@ body {
     color: #fff;
   }
 
+.play-sound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
   @media (max-width: 400px) {
     .user-chat {
       width: 250px; /* Make the width 100% */

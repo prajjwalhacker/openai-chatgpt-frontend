@@ -55,6 +55,20 @@ const loader = (node) => {
    }, 500);
 }
 
+ function handlePlaySound(e) {
+   const button = e.target;
+
+   // Get the parent div of the button
+   const parentDiv = button.parentElement;
+ 
+   // Get the text content of the parent div
+   const parentText = parentDiv.textContent.trim();
+   console.log("parentText");
+   console.log(parentText);
+   const utterance = new SpeechSynthesisUtterance(parentText);
+   speechSynthesis.speak(utterance);
+}
+
 function appendUserMessage(id, message) {
     const userDiv = document.createElement('div');
     userDiv.classList.add('user-chat');
@@ -76,6 +90,12 @@ function appendUserMessage(id, message) {
     svgElementBot.innerHTML = botSvg; // Assuming userSvg is valid SVG mark;
     botDiv.appendChild(svgElementBot.firstChild);
     botDiv.appendChild(textNodeBot);
+    const button = document.createElement("button");
+    button.classList.add('play-sound');
+    button.textContent = "🔊";
+    button.onclick = handlePlaySound; // Attach the event handler
+    botDiv.appendChild(button);
+
     chatContainer.appendChild(botDiv);
     chatContainer.scrollTop = chatContainer.scrollHeight;
     loader(textNodeBot);
@@ -91,3 +111,4 @@ buttonContaier.addEventListener('click', () => {
     const message = textAreaDiv.value;
     appendUserMessage(id, message);
 });
+
